@@ -8,45 +8,24 @@ const PaymentForm = () => {
     price: 0,
     today: "",
   });
-  // const [name, setName] = useState("");
-  // const [price, setPrice] = useState(0);
-  // const [today, setToday] = useState("");
 
-  // const inputTypeTextChangeHandler = (event) => {
-  //   setName(event.target.value); // 상태 업데이트
-  // };
-
-  // const inputTypeNumberChangeHandler = (event) => {
-  //   setPrice(event.target.value); // 상태 업데이트
-  // };
-
-  // const inputTypedateChangeHandler = (event) => {
-  //   setToday(event.target.value); // 상태 업데이트
-  // };
-
-  const inputTypeTextChangeHandler = (event) => {
+  const inputTextChangeHandler = (event) => {
     setObjectState((prevState) => ({ ...prevState, name: event.target.value }));
   };
 
-  const inputTypeNumberChangeHandler = (event) => {
+  const inputNumberChangeHandler = (event) => {
     setObjectState((prevState) => ({
       ...prevState,
       price: event.target.value,
     }));
   };
 
-  const inputTypedateChangeHandler = (event) => {
+  const inputdateChangeHandler = (event) => {
     setObjectState((prevState) => ({
       ...prevState,
       today: event.target.value,
     }));
   };
-
-  // const buttonSubmitHandler = () => {
-  //   console.log("name : ", name);
-  //   console.log("price : ", price);
-  //   console.log("Today : ", today);
-  // };
 
   const buttonSubmitHandler = () => {
     console.log("name : ", objectState.name);
@@ -62,7 +41,7 @@ const PaymentForm = () => {
           <input
             type="text"
             value={objectState.name}
-            onChange={inputTypeTextChangeHandler}
+            onChange={inputTextChangeHandler}
           />
         </div>
         <div className="new-payment__control">
@@ -72,7 +51,7 @@ const PaymentForm = () => {
             min="0.01"
             step="0.01"
             value={objectState.price}
-            onChange={inputTypeNumberChangeHandler}
+            onChange={inputNumberChangeHandler}
           />
         </div>
         <div className="new-payment__control">
@@ -82,7 +61,7 @@ const PaymentForm = () => {
             min="2019-01-01"
             max="2022-12-31"
             value={objectState.today}
-            onChange={inputTypedateChangeHandler}
+            onChange={inputdateChangeHandler}
           />
         </div>
       </div>
