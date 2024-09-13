@@ -34,6 +34,7 @@ const PaymentForm = ({ getPaymentFormData }) => {
     event.preventDefault();
 
     getPaymentFormData(objectState);
+    // console.log(objectState);
 
     setObjectState({
       name: "",
@@ -74,6 +75,42 @@ const PaymentForm = ({ getPaymentFormData }) => {
               value={objectState.today}
             />
           </div>
+          {/* <div>
+           <p>필수품</p>
+            <div>
+              <input type="radio" id="yes" value="yes" name="necessity" />
+              <label for="yes">O</label>
+            </div>
+            <div>
+              <input type="radio" id="no" value="no" name="necessity" />
+              <label for="no">X</label>
+            </div>
+          </div>
+          <div className="new-payment__control">
+            <label>영수증사진</label>
+            <div>
+              <input type="file" />
+            </div>
+          </div>
+          <div>
+            <p>지불방법</p>
+            <div>
+              <input type="checkbox" id="creditCard" />
+              <label for="creditCard">CreditCard</label>
+            </div>
+            <div>
+              <input type="checkbox" id="checkCard" />
+              <label for="checkCard">CheckCard</label>
+            </div>
+            <div>
+              <input type="checkbox" id="cash" />
+              <label for="cash">Cash</label>
+            </div>
+            <div>
+              <input type="checkbox" id="giftcertificate" />
+              <label for="giftcertificate">Gift Certificate</label>
+            </div>
+          </div> */}
         </div>
         <div className="new-payment__actions">
           <button type="submit">결제 추가</button>
